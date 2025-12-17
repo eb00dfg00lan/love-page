@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Для тебя ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.card {
+    background: rgba(0,0,0,0.3);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+}
+
+h1 { font-size: 36px; margin-bottom: 20px; }
+p  { font-size: 20px; margin: 10px 0; }
+
+.photos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.photos img {
+    width: 30%;
+    border-radius: 15px;
+}
+</style>
+</head>
+<body>
+<div class="card" id="content"></div>
+
+<script>
+// 🔴 ИЗМЕНИ ТУТ
+const startDate = new Date("2024-02-14"); // дата начала отношений
+const birthday  = new Date("2025-12-18"); // дата её дня рождения
+
+const today = new Date();
+today.setHours(0,0,0,0);
+
+const diffTime = today - startDate;
+const daysTogether = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+const content = document.getElementById("content");
+
+// HTML для фото
+const photosHTML = `
+<div class="photos">
+    <img src="photo1.jpg" alt="Фото 1">
+    <img src="photo2.jpg" alt="Фото 2">
+    <img src="photo3.jpg" alt="Фото 3">
+</div>
+`;
+
+// HTML для аудио
+const audioHTML = `
+<audio autoplay loop>
+  <source src="audio1.mp3" type="audio/mpeg">
+</audio>
+<audio autoplay loop>
+  <source src="audio2.mp3" type="audio/mpeg">
+</audio>
+<audio autoplay loop>
+  <source src="audio3.mp3" type="audio/mpeg">
+</audio>
+`;
+
+if (today < birthday) {
+    content.innerHTML = `
+        <h1>❤️ Мы вместе уже ${daysTogether} дней ❤️</h1>
+        <p>Каждый день с тобой — лучший</p>
+        <p>Завтра будет особенный день ✨</p>
+    `;
+} else {
+    content.innerHTML = `
+        <h1>🎉 С ДНЁМ РОЖДЕНИЯ 🎉</h1>
+        <p>Моя самая любимая ❤️</p>
+        <p>Ты моя любимая и ценная девушка, на которую есть большие планы в будущем</p>
+        ${photosHTML}
+        ${audioHTML}
+        <p>Спасибо за каждый день вместе 💖</p>
+        <pre>
+while(true) {
+    I_LOVE_YOU();
+}
+        </pre>
+    `;
+}
+</script>
+</body>
+</html>
